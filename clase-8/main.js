@@ -58,32 +58,34 @@ routerProduct.post("/", (req, res) => {
 
 // Recibe y actualiza un producto segun su id
 
-routerProduct.post("/update", (req, res) => {
-  const product = productos[req.body.id - 1];
+routerProduct.put("/:id", (req, res) => {
+  // const product = productos[req.body.id - 1];
 
-  if(productos.indexOf(product) === -1) {
-    res.json(msg)
-  } else {
-    
-  }
-
-  // const product = productos[req.params.id - 1];
-
-  // if (productos.indexOf(product) === -1) {
-  //   res.json(msg);
+  // if(productos.indexOf(product) === -1) {
+  //   res.json(msg)
   // } else {
-  //   product.title = req.body.title;
-  //   product.price = req.body.price;
-  //   product.thumbnail = req.body.thumbnail;
 
-  //   res.json(product);
   // }
+
+  const product = productos[req.params.id - 1];
+
+  if (productos.indexOf(product) === -1) {
+    res.json(msg);
+  } else {
+    product.title = req.body.title;
+    product.price = req.body.price;
+    product.thumbnail = req.body.thumbnail;
+
+    res.json(product);
+  }
 });
 
 // Elimina un producto segun su id
 
-routerProduct.post("/delete", (req, res) => {
-  productos.splice(req.body.id - 1, 1);
+routerProduct.delete("/:id", (req, res) => {
+  // productos.splice(req.body.id - 1, 1);
+  // res.json(productos);
+  productos.splice(req.params.id - 1, 1);
   res.json(productos);
 });
 
