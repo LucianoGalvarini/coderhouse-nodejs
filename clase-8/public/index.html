@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Productos</h1>
+
+    <form action="/api/productos" method="post">
+      <h2>Agregar producto</h2>
+      <div>
+        <label>Titulo</label>
+        <input type="text" name="title" />
+      </div>
+      <div>
+        <label>Precio</label>
+        <input type="number" name="price" />
+      </div>
+      <div>
+        <label>URL imagen</label>
+        <input type="text" name="thumbnail" />
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <form action="/api/productos/update" method="post">
+      <h2>Modificar producto</h2>
+      <div>
+        <label>Id</label>
+        <input type="number" name="id" />
+      </div>
+      <div>
+        <label>Titulo</label>
+        <input type="text" name="title" />
+      </div>
+      <div>
+        <label>Precio</label>
+        <input type="number" name="price" />
+      </div>
+      <div>
+        <label>URL imagen</label>
+        <input type="text" name="thumbnail" />
+      </div>
+      <button type="submit">Modificar</button>
+    </form>
+
+    <form action="/api/productos/delete" method="post">
+      <h2>Eliminar producto</h2>
+      <div>
+        <label>id</label>
+        <input type="number" name="id" />
+      </div>
+      <button type="submit">Eliminar</button>
+    </form>
+  </body>
+</html>
