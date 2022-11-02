@@ -1,0 +1,38 @@
+<div style="width: 600px; margin: 50px; text-align: center;">
+  <h2>Vista de productos</h2>
+  {{#if isStock}}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each productos}}
+          <tr>
+            <td>{{this.title}}</td>
+            <td>${{this.price}}</td>
+            <td>
+              <img
+                src="{{this.thumbnail}}"
+                style="width: 30px; height: 30px;"
+              />
+            </td>
+
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <div
+      style="background-color: #f2eea2; padding: 10px; margin: 10px; border-radius: 10px;"
+    >
+      <h3>No se encontraron productos</h3>
+    </div>
+  {{/if}}
+
+  <a href="/productos" class="btn btn-success mb-3">Ver formulario de productos</a>
+
+</div>
