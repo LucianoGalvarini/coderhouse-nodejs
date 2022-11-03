@@ -1,15 +1,9 @@
 const express = require("express");
-const exphbs = require("express-handlebars");
 const app = express();
 
-const handlebarsConfig = {
-  defaultLayout: "index.handlebars",
-};
-
 app.use(express.urlencoded({ extended: true }));
-app.engine("handlebars", exphbs(handlebarsConfig));
-app.set("view engine", "handlebars");
-app.set("views", "../views");
+app.set("view engine", "pug");
+app.set("views", "./views");
 
 // ------------------------------------------------------------
 
@@ -21,12 +15,12 @@ app.post("/productos/form", (req, res) => {
 });
 
 app.get("/productos/form", (req, res) => {
-  res.render("formulario");
+  res.render("formulario.pug");
 });
 
 app.get("/productos/list", (req, res) => {
   const isStock = productos.length > 0 ? true : false;
-  res.render("lista", { productos, isStock });
+  res.render("lista.pug", { productos, isStock });
 });
 
 // ------------------------------------------------------------

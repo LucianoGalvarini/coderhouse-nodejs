@@ -1,0 +1,49 @@
+<%- include('./encabezado')-%>
+
+<body
+  style="
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    text-align: center;
+    align-items: center;
+  "
+>
+  <h1>Desafio en Ejs</h1>
+  <% if(productos.length > 0){ %>
+  <div style="width: 600px; margin: 50px; text-align: center">
+    <h2>Vista de productos</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%productos.map((producto) => {%>
+        <tr>
+          <td><%=producto.title%></td>
+          <td><%=producto.price%></td>
+          <td>
+            <img
+              src="<%=producto.thumbnail%>"
+              style="width: 30px; height: 30px"
+            />
+          </td>
+        </tr>
+        <%});%>
+      </tbody>
+    </table>
+  </div>
+  <% } else{ %>
+  <h3 class="alert alert-danger">no se encontraron datos</h3>
+  <% } %>
+
+  <a href="/productos/form" class="btn btn-success mb-3"
+    >Ver formulario de productos</a
+  >
+</body>
+
+<%- include('./pie')-%>
