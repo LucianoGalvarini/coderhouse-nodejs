@@ -10,11 +10,12 @@ block lista
                         th(scope="col") Precio 
                         th(scope="col") Foto
                 tbody
-                    tr 
-                        td asd
-                        td asd
-                        td
-                            img(src="" style="width: 30px; height: 30px;")
+                    each product in productos 
+                        tr 
+                            td= product.title
+                            td= product.price
+                            td
+                                img(src=`${product.thumbnail}` style="width: 30px; height: 30px;")
         else 
             div(style={background: '#f2eea2', padding: '10px', margin: '10px', borderRadius: "10px"})
                 h3 No se encontraron productos
