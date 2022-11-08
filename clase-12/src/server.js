@@ -23,7 +23,7 @@ app.use(express.static("../views"));
 let productos = [];
 
 app.get("/", (req, res) => {
-  res.render("main");
+  res.render("main.handlebars");
 });
 
 // ------------------------- MENSAJES -------------------------
@@ -54,7 +54,8 @@ io.on("connection", async (socket) => {
 
   socket.on("newProduct", (product) => {
     productos.push(product);
-    io.emit("productos", productos);clearScreenDown
+    io.emit("productos", productos);
+    clearScreenDown;
   });
 });
 
