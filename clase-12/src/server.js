@@ -5,6 +5,8 @@ const { Server: HttpServer } = require("http");
 const { Server: IOServer } = require("socket.io");
 const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
+const fs = require("fs");
+const { clearScreenDown } = require("readline");
 
 const handlebarsConfig = {
   defaultLayout: "index.handlebars",
@@ -19,7 +21,6 @@ app.use(express.static("../views"));
 // ------------------------------------------------------------
 
 let productos = [];
-let messages = [];
 
 app.get("/", (req, res) => {
   res.render("main");
@@ -27,22 +28,33 @@ app.get("/", (req, res) => {
 
 // ------------------------- MENSAJES -------------------------
 
-io.on("connection", (socket) => {
-  console.log("un cliente se ha conectado");
+io.on("connection", async (socket) => {
+  console.log("Un cliente se ha conectado");
+  if (!fs.existsSync("messages.json")) {
+    await fs.promises.writeFile("messages.json", JSON.stringify([], null, 2));
+  }
 
-  // const isStock = productos.length > 0 ? true : false;
-  socket.emit("messages", messages);
+  let msgs = await fs.promises.readFile("messages.json");
+
+  socket.emit("messages", JSON.parse(msgs));
   socket.emit("productos", productos);
 
   socket.on("new-message", (data) => {
-    console.log((data.fecha = new Date().toLocaleString()));
-    messages.push(data);
-    io.emit("messages", messages);
+    let result = JSON.parse(msgs);
+    io.emit("messages", result);
+
+    let newMsg = {
+      fecha: new Date().toLocaleString(),
+      ...data,
+    };
+    result.push(newMsg);
+
+    fs.promises.writeFile("messages.json", JSON.stringify(result, null, 2));
   });
 
   socket.on("newProduct", (product) => {
     productos.push(product);
-    io.emit("productos", productos);
+    io.emit("productos", productos);clearScreenDown
   });
 });
 
@@ -51,27 +63,3 @@ io.on("connection", (socket) => {
 httpServer.listen(8080, function () {
   console.log("Servidor corriendo");
 });
-
-// app.post("/", (req, res) => {
-//   if (req.body.title && req.body.price && req.body.thumbnail) {
-//     productos.push(req.body);
-//     res.redirect("/");
-//   } else {
-//     console.log("Debe llenar todos los campos para cargar un producto");
-//   }
-// });
-
-// app.get("/", (req, res) => {
-//   res.render("formulario");
-// });
-
-// app.get("/productos", (req, res) => {
-//   const isStock = productos.length > 0 ? true : false;
-//   res.render("lista", { productos, isStock });
-// });
-
-// ------------------------------------------------------------
-
-// app.listen(8080, () => {
-//   console.log("Servidor ok, puerto 8080");
-// });
