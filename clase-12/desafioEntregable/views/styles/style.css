@@ -1,0 +1,87 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+}
+
+body h1 {
+  grid-column-start: span 2;
+}
+
+.formProductos,
+.listProduct {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 280px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.listProduct {
+  overflow-y: scroll;
+}
+
+.msgSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 900px;
+  height: 350px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 10px;
+  grid-column-start: span 2;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  text-align: center;
+  width: 800px;
+  height: 225px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.mensaje {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+strong {
+  color: blue;
+  margin-right: 5px;
+}
+
+p {
+  color: brown;
+  margin: 0 5px;
+}
+
+em {
+  max-width: 400px;
+  margin: 0;
+  color: green;
+}
+
+.form-msg {
+  display: flex;
+  width: 50%;
+  position: fixed;
+  justify-content: space-between;
+  bottom: 0;
+}
+
+.form-msg input {
+  margin: 0 5px;
+}

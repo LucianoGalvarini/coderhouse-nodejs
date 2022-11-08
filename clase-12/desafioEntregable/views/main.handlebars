@@ -1,0 +1,67 @@
+<div class="formProductos">
+
+  <h2>Cargar producto</h2>
+  <form onsubmit="return addProduct(this)">
+    <div class="mb-3 row">
+      <label for="inputTitle" class="col-sm-2 col-form-label">Nombre</label>
+      <div class="col-sm-10">
+        <input type="text" name="title" class="form-control" id="inputTitle" />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputPrice" class="col-sm-2 col-form-label">Precio</label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          name="price"
+          class="form-control"
+          id="inputPrice"
+        />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputThumbnail" class="col-sm-2 col-form-label">URL foto</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          name="thumbnail"
+          class="form-control"
+          id="inputThumbnail"
+        />
+      </div>
+    </div>
+
+    <div class="col-auto">
+      <input type="submit" class="btn btn-warning" value="Cargar" />
+    </div>
+  </form>
+
+</div>
+
+<div class="listProduct">
+  <h2>Vista de productos</h2>
+  <div id="divTable">
+
+  </div>
+
+</div>
+
+<div class="msgSection">
+  <h2>Centro de mensajes</h2>
+  <div id="messages" class="messages"></div>
+  <form onsubmit="return addMessage(this)" class="form-msg">
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="Escriba su email"
+    />
+    <input
+      type="text"
+      class="form-control"
+      id="texto"
+      placeholder="Escriba el mensaje"
+    />
+    <input type="submit" class="btn btn-success" value="Enviar" />
+  </form>
+</div>
