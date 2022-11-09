@@ -30,19 +30,18 @@ app.get("/", (req, res) => {
 
 io.on("connection", async (socket) => {
   console.log("Un cliente se ha conectado");
+
   if (!fs.existsSync("messages.json")) {
     await fs.promises.writeFile("messages.json", JSON.stringify([], null, 2));
   }
 
   let msgs = await fs.promises.readFile("messages.json");
+  let result = JSON.parse(msgs);
 
-  socket.emit("messages", JSON.parse(msgs));
+  socket.emit("messages", result);
   socket.emit("productos", productos);
 
-  socket.on("new-message", (data) => {
-    let result = JSON.parse(msgs);
-    io.emit("messages", result);
-
+  socket.on("newMessage", (data) => {
     let newMsg = {
       fecha: new Date().toLocaleString(),
       ...data,
@@ -50,12 +49,12 @@ io.on("connection", async (socket) => {
     result.push(newMsg);
 
     fs.promises.writeFile("messages.json", JSON.stringify(result, null, 2));
+    io.emit("messages", result);
   });
 
   socket.on("newProduct", (product) => {
     productos.push(product);
     io.emit("productos", productos);
-    clearScreenDown;
   });
 });
 

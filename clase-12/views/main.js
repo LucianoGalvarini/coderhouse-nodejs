@@ -4,12 +4,12 @@ const socket = io.connect();
 
 function renderMsg(data) {
   const html = data
-    .map((elem) => {
+    .map((msg) => {
       return `
           <div class="mensaje">
-            <strong >${elem.author}</strong>
-            <p>[${elem.fecha}]</p>
-            <em>: ${elem.text}</em>
+            <strong >${msg.author}</strong>
+            <p>[${msg.fecha}]: </p>
+            <em>${msg.text}</em>
           </div>
           `;
     })
@@ -77,7 +77,7 @@ function addMessage() {
       author: inputEmail.value,
       text: inputTexto.value,
     };
-    socket.emit("new-message", mensaje);
+    socket.emit("newMessage", mensaje);
   } else {
     alert("Debe llenar todos los campos para cargar un producto");
   }
