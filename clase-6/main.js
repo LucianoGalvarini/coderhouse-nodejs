@@ -15,7 +15,6 @@ app.get("/productos", (req, res) => {
 
 app.get("/productoRandom", (req, res) => {
   const random = productos[Math.floor(Math.random() * productos.length)];
-
   res.send(random);
 });
 

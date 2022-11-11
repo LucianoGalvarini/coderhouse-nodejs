@@ -27,18 +27,18 @@ app.get("/", (req, res) => {
 
 // ------------------------- MENSAJES -------------------------
 
+if (!fs.existsSync("messages.json")) {
+  fs.writeFileSync("messages.json", JSON.stringify([]));
+}
+
+let result = JSON.parse(fs.readFileSync("messages.json"));
+
 io.on("connection", (socket) => {
   console.log("El usuario", socket.id, "se ha conectado");
 
   socket.on("disconnect", () => {
     console.log("El usuario", socket.id, "se ha desconectado");
   });
-
-  if (!fs.existsSync("messages.json")) {
-    fs.writeFileSync("messages.json", JSON.stringify([]));
-  }
-
-  let result = JSON.parse(fs.readFileSync("messages.json"));
 
   socket.emit("messages", result);
   socket.emit("productos", productos);

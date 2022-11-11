@@ -65,7 +65,6 @@ async function renderProductList(productos) {
 
 socket.on("messages", (data) => renderMsg(data));
 socket.on("productos", (productos) => renderProductList(productos));
-
 // ------------------------- Formulario de  mensajes -------------------------
 
 function addMessage() {
