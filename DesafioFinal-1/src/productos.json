@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Luciano",
+    "descripcion": "asdasda",
+    "codigo": "asdad",
+    "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
+    "precio": "1111",
+    "stock": "2323",
+    "fecha": "15/11/2022 17:08:27"
+  },
+  {
+    "id": 2,
+    "nombre": "Luciano",
+    "descripcion": "asdasda",
+    "codigo": "asdad",
+    "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
+    "precio": "1111",
+    "stock": "2323",
+    "fecha": "15/11/2022 17:08:30"
+  },
+  {
+    "id": 3,
+    "nombre": "Luciano",
+    "descripcion": "asdasda",
+    "codigo": "asdad",
+    "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
+    "precio": "1111",
+    "stock": "2323",
+    "fecha": "15/11/2022 17:08:37"
+  }
+]
