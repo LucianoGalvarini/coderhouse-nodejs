@@ -17,8 +17,8 @@ export function writeProduct(data) {
   );
   let newProduct = {
     id: lastId + 1,
+    timestamp: new Date().toLocaleString(),
     ...data,
-    fecha: new Date().toLocaleString(),
   };
   products.push(newProduct);
   fs.writeFileSync("productos.json", JSON.stringify(products, null, 2));

@@ -32,3 +32,28 @@ export function cargarProducto(data) {
 
   return product;
 }
+export function actualizarProducto(data) {
+  // const product = productos[req.params.id - 1];
+
+  // if (productos.indexOf(product) === -1) {
+  //   res.json(msg);
+  // } else {
+  //   product.title = req.body.title;
+  //   product.price = req.body.price;
+  //   product.thumbnail = req.body.thumbnail;
+
+  //   res.json(product);
+  // }
+
+  let product = new Product(
+    data.nombre,
+    data.descripcion,
+    data.codigo,
+    data.thumbnail,
+    data.precio,
+    data.stock
+  );
+  writeProduct(product);
+
+  return product;
+}
