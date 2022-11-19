@@ -80,6 +80,7 @@ function addMessage() {
   } else {
     alert("Debe llenar todos los campos para cargar un producto");
   }
+
   return false;
 }
 
