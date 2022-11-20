@@ -1,4 +1,5 @@
 import { writeProduct } from "./files.js";
+import { products } from "./files.js";
 
 class Product {
   constructor(nombre, descripcion, codigo, thumbnail, precio, stock) {
@@ -32,28 +33,21 @@ export function cargarProducto(data) {
 
   return product;
 }
-export function actualizarProducto(data) {
-  // const product = productos[req.params.id - 1];
+export function actualizarProducto(data, id) {
+  const product = productos[id - 1];
 
-  // if (productos.indexOf(product) === -1) {
-  //   res.json(msg);
-  // } else {
-  //   product.title = req.body.title;
-  //   product.price = req.body.price;
-  //   product.thumbnail = req.body.thumbnail;
+  if (productos.indexOf(product) === -1) {
+    alert("No existe un producto con el id buscado");
+  } else {
+    product.nombre = data.nombre;
+    product.descripcion = data.descripcion;
+    product.codigo = data.codigo;
+    product.thumbnail = data.thumbnail;
+    product.precio = data.precio;
+    product.stock = data.stock;
 
-  //   res.json(product);
-  // }
-
-  let product = new Product(
-    data.nombre,
-    data.descripcion,
-    data.codigo,
-    data.thumbnail,
-    data.precio,
-    data.stock
-  );
-  writeProduct(product);
+    writeProduct(product);
+  }
 
   return product;
 }

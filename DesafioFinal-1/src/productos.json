@@ -11,52 +11,12 @@
   },
   {
     "id": 2,
-    "timestamp": "19/11/2022 15:53:12",
-    "nombre": "Heladera inverter no frost Samsung",
-    "descripcion": "Disfrutá de tus alimentos frescos y almacenalos de manera práctica y cómoda en la heladera Samsung, la protagonista de la cocina.",
-    "codigo": "99asd8w5",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_734540-MLA44628265442_012021-O.webp",
-    "precio": "149499",
-    "stock": "20"
-  },
-  {
-    "id": 3,
-    "timestamp": "19/11/2022 15:54:32",
-    "nombre": "Celular Samsung Galaxy A22 5g 128gb + 4gb Ram 90hz Liberado",
-    "descripcion": "Las últimas actualizaciones de la red de datos móviles traen consigo un 5G más potente y veloz, que cambia la forma en la que consumes y compartes contenido. Desde una experiencia de juego y streaming sin interferencias hasta la posibilidad de descargar y compartir contenidos de forma ultra rápida. Ríndete a Galaxy A22 5G y acelera el uso de tu smartphone.",
-    "codigo": "56asd14656s",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_680698-MLA49565967807_042022-O.webp",
-    "precio": "64999",
-    "stock": "42"
-  },
-  {
-    "id": 4,
-    "timestamp": "19/11/2022 15:55:27",
-    "nombre": "Parlante Philco DJP10 portátil con bluetooth negro 220V",
-    "descripcion": "Philco DJP10 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
-    "codigo": "asd12345s",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_849374-MLA41349994104_042020-O.webp",
-    "precio": "12092",
-    "stock": "66"
-  },
-  {
-    "id": 5,
-    "timestamp": "19/11/2022 15:57:39",
-    "nombre": "Silla Gamer Sillon Oficina Reclinable Butaca Esports",
-    "descripcion": "a selección de una silla adecuada es muy importante para prevenir futuras lesiones. Con esta silla DeSillas, vas a tener la comodidad y el bienestar que necesitás a lo largo de tu jornada. Además, podés ubicarla en cualquier parte de tu casa u oficina ya que su diseño se adapta a múltiples entornos. ¡Dale a tus espacios un toque más moderno!",
-    "codigo": "a9s82kf2",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_833953-MLA47701803898_092021-O.webp",
-    "precio": "49222",
-    "stock": "16"
-  },
-  {
-    "id": 6,
-    "timestamp": "19/11/2022 15:58:24",
-    "nombre": "Auriculares Gamer Jedel Gh230 Luces Microfono Usb Somostec",
-    "descripcion": "Hola somos SOMOSTEC, importadores directos que buscamos soluciones tecnológicas para que el consumidor final se divierta o trabaje con productos de excelente calidad",
-    "codigo": "grg0912j",
-    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_659686-MLA51243132554_082022-O.webp",
-    "precio": "3459",
-    "stock": "58"
+    "timestamp": "20/11/2022 18:55:31",
+    "nombre": "asdsadsa",
+    "descripcion": "123213213asdsada",
+    "codigo": "asdass3a3as",
+    "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
+    "precio": "123213213",
+    "stock": "13223"
   }
 ]

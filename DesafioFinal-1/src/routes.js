@@ -7,7 +7,7 @@ const app = express();
 const routerProduct = Router();
 const routerCart = Router();
 import exphbs from "express-handlebars";
-import { cargarProducto } from "./functions.js";
+import { actualizarProducto, cargarProducto } from "./functions.js";
 import { products } from "./files.js";
 
 app.use(express.urlencoded({ extended: true }));
@@ -47,11 +47,14 @@ routerProduct.get("/:id?", (req, res) => {
 // Para incorporar productos al listado (A)
 routerProduct.post("/", (req, res) => {
   res.json(cargarProducto(req.body));
-  res.render("formulario.handlebars");
+  res.render("formulario");
 });
 
 // Actualiza un producto por su id (A)
-routerProduct.put("/:id", (req, res) => {});
+routerProduct.put("/:id", (req, res) => {
+  res.json(actualizarProducto(req.body, req.params.id));
+  res.render("lista");
+});
 
 // Borra un producto por su id (A)
 routerProduct.delete("/:id", (req, res) => {});
