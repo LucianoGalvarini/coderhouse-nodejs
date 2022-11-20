@@ -1,4 +1,4 @@
-import { writeProduct } from "./files.js";
+import { writeProduct, updateProduct, deleteProduct } from "./files.js";
 import { products } from "./files.js";
 
 class Product {
@@ -13,10 +13,10 @@ class Product {
 }
 
 class Carrito {
-  constructor(id, timestampCart, productos) {
+  constructor(id, timestampCart, products) {
     this.id = id;
     this.timestampCart = timestampCart;
-    this.productos = productos;
+    this.products = products;
   }
 }
 
@@ -34,10 +34,13 @@ export function cargarProducto(data) {
   return product;
 }
 export function actualizarProducto(data, id) {
-  const product = productos[id - 1];
+  let product = products[id - 1];
 
-  if (productos.indexOf(product) === -1) {
-    alert("No existe un producto con el id buscado");
+  if (products.indexOf(product) === -1) {
+    let msg = {
+      error: "No existe un producto con el id buscado",
+    };
+    alert(msg);
   } else {
     product.nombre = data.nombre;
     product.descripcion = data.descripcion;
@@ -45,9 +48,15 @@ export function actualizarProducto(data, id) {
     product.thumbnail = data.thumbnail;
     product.precio = data.precio;
     product.stock = data.stock;
-
-    writeProduct(product);
   }
+  
+  updateProduct(product);
 
   return product;
+}
+
+export function borrarProducto(id) {
+  products.splice(id - 1, 1);
+  deleteProduct();
+  return products;
 }

@@ -23,3 +23,17 @@ export function writeProduct(data) {
   products.push(newProduct);
   fs.writeFileSync("productos.json", JSON.stringify(products, null, 2));
 }
+
+export function updateProduct(data) {
+  let idProductos = products.map((product) => product.id);
+
+  if (idProductos.indexOf(data.id) === -1) {
+    products.push(data);
+  }
+
+  fs.writeFileSync("productos.json", JSON.stringify(products, null, 2));
+}
+
+export function deleteProduct() {
+  fs.writeFileSync("productos.json", JSON.stringify(products, null, 2));
+}

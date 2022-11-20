@@ -7,7 +7,11 @@ const app = express();
 const routerProduct = Router();
 const routerCart = Router();
 import exphbs from "express-handlebars";
-import { actualizarProducto, cargarProducto } from "./functions.js";
+import {
+  actualizarProducto,
+  borrarProducto,
+  cargarProducto,
+} from "./functions.js";
 import { products } from "./files.js";
 
 app.use(express.urlencoded({ extended: true }));
@@ -24,9 +28,10 @@ app.use(express.static("../views"));
 
 // ---------------------------------------------------- PRODUCTOS ----------------------------------------------------
 
+let isStock = products.length > 0 ? true : false;
+let admin = true;
+
 app.get("/", (req, res) => {
-  let isStock = products.length > 0 ? true : false;
-  let admin = true;
   res.render("lista", { products, isStock, admin });
   // res.render("actualizar.handlebars");
 });
@@ -57,7 +62,10 @@ routerProduct.put("/:id", (req, res) => {
 });
 
 // Borra un producto por su id (A)
-routerProduct.delete("/:id", (req, res) => {});
+routerProduct.delete("/:id", (req, res) => {
+  res.json(borrarProducto(req.params.id));
+  res.render("lista");
+});
 
 // Ruta definida
 app.use("/api/productos", routerProduct);
