@@ -18,5 +18,45 @@
     "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
     "precio": "123",
     "stock": "213"
+  },
+  {
+    "id": 3,
+    "timestamp": "21/11/2022 22:29:12",
+    "nombre": "asdsadsdas",
+    "descripcion": "1231231",
+    "codigo": "asdsadsa",
+    "thumbnail": "https://s3-sa-east-1.amazonaws.com/saasargentina/zb64u4dJmbv9p5ufHa2t/imagen",
+    "precio": "111",
+    "stock": "2"
+  },
+  {
+    "id": 4,
+    "timestamp": "21/11/2022 22:29:18",
+    "nombre": "asdsadasd",
+    "descripcion": "2131",
+    "codigo": "asdasd",
+    "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
+    "precio": "123",
+    "stock": "213"
+  },
+  {
+    "id": 5,
+    "timestamp": "21/11/2022 22:29:12",
+    "nombre": "asdsadsdas",
+    "descripcion": "1231231",
+    "codigo": "asdsadsa",
+    "thumbnail": "https://s3-sa-east-1.amazonaws.com/saasargentina/zb64u4dJmbv9p5ufHa2t/imagen",
+    "precio": "111",
+    "stock": "2"
+  },
+  {
+    "id": 6,
+    "timestamp": "21/11/2022 22:29:18",
+    "nombre": "asdsadasd",
+    "descripcion": "2131",
+    "codigo": "asdasd",
+    "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
+    "precio": "123",
+    "stock": "213"
   }
 ]

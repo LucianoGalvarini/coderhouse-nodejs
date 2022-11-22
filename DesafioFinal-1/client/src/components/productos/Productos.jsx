@@ -4,20 +4,36 @@ import "../styles/style.css";
 import Actualizar from "../formularios/Actualizar";
 import Eliminar from "../formularios/Eliminar";
 import AgregarACarrito from "../formularios/AgregarACarrito";
+import Cookies from "universal-cookie";
 
 const Productos = () => {
   const [listProduct, setListProduct] = useState([]);
+  const [cart, setCart] = useState();
+  const cookies = new Cookies();
+  const [admin, setAdmin] = useState([]);
 
   async function handleData() {
     await axios.get("http://localhost:8080/api/productos").then((response) => {
       if (response.status === 200) {
         setListProduct(response.data);
+        setAdmin(cookies.get("admin"));
       }
     });
   }
 
+  async function handleSubmit() {
+    await axios
+      .get(`http://localhost:8080/api/carrito/${cookies.get(cart)}/productos`)
+      .then((response) => {
+        if (response.status === 200) {
+          setCart(response.data);
+        }
+      });
+  }
+
   useEffect(() => {
     handleData();
+    handleSubmit();
   }, []);
 
   return (
@@ -38,9 +54,14 @@ const Productos = () => {
               </p>
               <h5 className="stock bordes">Stock: {product.stock}</h5>
             </div>
+
             <div className="btnFormulario">
-              <Actualizar producto={product} />
-              <Eliminar idProduct={product.id} />
+              {admin > 0 && (
+                <div className="btnFormulario-admin">
+                  <Actualizar producto={product} />
+                  <Eliminar idProduct={product.id} />
+                </div>
+              )}
               <AgregarACarrito data={product} />
             </div>
           </div>

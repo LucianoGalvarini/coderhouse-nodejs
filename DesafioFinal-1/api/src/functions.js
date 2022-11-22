@@ -3,8 +3,9 @@ import {
   updateProduct,
   deleteProduct,
   writeCarrito,
+  saveProdCart,
 } from "./files.js";
-import { products } from "./files.js";
+import { products, carts } from "./files.js";
 
 class Product {
   constructor(nombre, descripcion, codigo, thumbnail, precio, stock) {
@@ -23,13 +24,6 @@ class Carrito {
   }
 }
 
-export function cargarCarrito() {
-  let carrito = new Carrito();
-
-  writeCarrito(carrito);
-
-  return carrito;
-}
 export function cargarProducto(data) {
   let product = new Product(
     data.nombre,
@@ -76,5 +70,36 @@ export function borrarProducto(id) {
   products.splice(index, 1);
 
   deleteProduct();
+  return products;
+}
+
+/* ------------------------------------------------------------ */
+
+export function cargarCarrito() {
+  let carrito = new Carrito();
+
+  let lastId = carts.reduce(
+    (acc, item) => (item.id > acc ? (acc = item.id) : acc),
+    0
+  );
+  let newCart = {
+    id: lastId + 1,
+    timestamp: new Date().toLocaleString(),
+    ...carrito,
+  };
+
+  writeCarrito(newCart);
+
+  return newCart.id;
+}
+
+export function mostrarCarrito() {
+  
+}
+
+export function addProdCart(idCart, idProd) {
+  const index = products.findIndex((product) => product.id == idProd);
+
+  saveProdCart(idCart, products[index]);
   return products;
 }

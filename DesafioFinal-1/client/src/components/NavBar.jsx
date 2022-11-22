@@ -5,10 +5,13 @@ const NavBar = () => {
   return (
     <header className="header" id="inicio">
       <div className="contenedor">
-        <h4 className="titulo">Desafio Final</h4>
+        <h4 className="titulo">
+          <a href="/">Ecommerce</a>
+        </h4>
       </div>
       <nav className="menu-navegacion">
-        <a href="http://localhost:3000/">Productos</a>
+        <a href="/">Inicio</a>
+        <a href="/productos">Productos</a>
         <a href="/form">Formulario</a>
       </nav>
     </header>

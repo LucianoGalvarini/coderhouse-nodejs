@@ -1,7 +1,23 @@
 [
   {
     "id": 1,
-    "timestamp": "21/11/2022 23:24:41",
+    "timestamp": "22/11/2022 02:31:50",
     "products": []
+  },
+  {
+    "id": 2,
+    "timestamp": "22/11/2022 02:31:53",
+    "products": [
+      {
+        "id": 4,
+        "timestamp": "21/11/2022 22:29:18",
+        "nombre": "asdsadasd",
+        "descripcion": "2131",
+        "codigo": "asdasd",
+        "thumbnail": "https://www.venex.com.ar/products_images/1626718553_i9decima.png",
+        "precio": "123",
+        "stock": "213"
+      }
+    ]
   }
 ]

@@ -5,6 +5,7 @@ import "./App.css";
 import Productos from "./components/productos/Productos";
 import NavBar from "./components/NavBar";
 import Agregar from "./components/formularios/Agregar";
+import Inicio from "./components/Inicio";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Productos />} />
+          <Route path="/" element={<Inicio />} />
+          <Route path="/productos" element={<Productos />} />
           <Route path="/form" element={<Agregar />} />
         </Routes>
       </BrowserRouter>

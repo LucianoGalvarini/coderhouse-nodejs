@@ -57,7 +57,11 @@ const Actualizar = (producto) => {
 
   return (
     <div>
-      <Button variant="primary" type="submit" onClick={handleShow}>
+      <Button
+        variant="dark"
+        type="submit"
+        onClick={handleShow}
+      >
         Actualizar
       </Button>
 

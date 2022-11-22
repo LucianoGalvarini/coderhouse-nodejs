@@ -9,6 +9,8 @@ import {
   borrarProducto,
   cargarProducto,
   cargarCarrito,
+  addProdCart,
+  mostrarCarrito,
 } from "./functions.js";
 import { products } from "./files.js";
 
@@ -54,10 +56,14 @@ routerCart.post("/", (req, res) => {
 routerCart.delete("/:id", (req, res) => {});
 
 // Me permite listar todos los productos guardados en el carrito (U y A)
-routerCart.get("/:id/productos", (req, res) => {});
+routerCart.get("/:id/productos", (req, res) => {
+  res.json(mostrarCarrito(req.params.id));
+});
 
 // Para incorporar productos al carrito por su id de producto (U y A)
-routerCart.post("/:id/productos", (req, res) => {});
+routerCart.post("/:id/productos/:idProd", (req, res) => {
+  res.json(addProdCart(req.params.id, req.params.idProd));
+});
 
 // Eliminar un producto del carrito por su id de carrito y de producto (U y A)
 routerCart.delete("/:id/productos/:id_prod", (req, res) => {});

@@ -111,7 +111,7 @@ const Agregar = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary mb-3">
+        <button type="submit" className="btn btn-dark mb-3">
           Agregar producto
         </button>
       </form>
