@@ -115,7 +115,6 @@ export function addProdCart(idCart, idProd) {
   const prodsCartSelect = carts[idCart - 1].products;
   const index = products.findIndex((product) => product.id == idProd);
   const productSelect = products[index];
-
   let productStock = {
     ...productSelect,
   };
@@ -125,10 +124,10 @@ export function addProdCart(idCart, idProd) {
   );
 
   if (indexProdCart !== -1) {
-    prodsCartSelect.splice(indexProdCart, 1);
+    let newProd = prodsCartSelect.splice(indexProdCart, 1);
     products[index].stock--;
-    productStock.stock++;
-    prodsCartSelect.push(productStock);
+    newProd[0].stock++;
+    prodsCartSelect.push(newProd[0]);
   } else {
     productStock.stock = 1;
     products[index].stock--;
@@ -142,11 +141,21 @@ export function addProdCart(idCart, idProd) {
 
 export function deleteCartProd(idCart, idProd) {
   const indexCart = carts.findIndex((cart) => cart.id == idCart);
-  const indexProd = carts[indexCart].products.findIndex(
+  const indexProdCart = carts[indexCart].products.findIndex(
     (prod) => prod.id == idProd
   );
+  const indexProd = products.findIndex((product) => product.id == idProd);
+  let prodStock = carts[indexCart].products[indexProdCart].stock;
 
-  carts[indexCart].products.splice(indexProd, 1);
+  if (prodStock > 1) {
+    products[indexProd].stock++;
+    carts[indexCart].products[indexProdCart].stock--;
+  } else {
+    products[indexProd].stock++;
+    carts[indexCart].products.splice(indexProdCart, 1);
+  }
+
+  writeJsonProduct();
   writeJsonCart();
 }
 
