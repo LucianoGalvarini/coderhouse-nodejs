@@ -264,13 +264,14 @@ button {
   column-gap: 30px;
   row-gap: 30px;
   margin: 0;
-  height: 450px;
+  height: 520px;
   overflow-y: scroll;
 }
 
 .modalProdList .producto {
   margin-top: 0px;
   margin-bottom: 5px;
+  height: 500px;
 }
 
 .modalProdList .producto img,

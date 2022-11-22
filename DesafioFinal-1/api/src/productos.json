@@ -7,7 +7,7 @@
     "codigo": "sa414sd",
     "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_866355-MLA50496017131_062022-O.webp",
     "precio": "23975",
-    "stock": "50"
+    "stock": 50
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "codigo": "sd921as",
     "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_796379-MLA52203263871_102022-O.webp",
     "precio": "15990",
-    "stock": "100"
+    "stock": 99
   },
   {
     "id": 3,
@@ -26,8 +26,8 @@
     "descripcion": "Zapatillas Sneakers  Sinteticas  Cordones  Plataforma 5 cm  Base de goma antideslizante",
     "codigo": "5sd4w61s",
     "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_686842-MLA51292643831_082022-O.webp",
-    "precio": "11999",
-    "stock": "26"
+    "precio": "17999",
+    "stock": "100"
   },
   {
     "id": 4,
@@ -37,6 +37,6 @@
     "codigo": "a885wwd1",
     "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_920908-MLA51275027403_082022-O.webp",
     "precio": "12990",
-    "stock": "146"
+    "stock": 145
   }
 ]
