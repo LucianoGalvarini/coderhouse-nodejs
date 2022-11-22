@@ -34,9 +34,15 @@ export function cargarProducto(data) {
   return product;
 }
 export function actualizarProducto(data, id) {
-  let product = products[id - 1];
+  let product = {};
 
-  if (products.indexOf(product) === -1) {
+  products.map((prod) => {
+    if (prod.id == id) {
+      product = prod;
+    }
+  });
+
+  if (product === {}) {
     let msg = {
       error: "No existe un producto con el id buscado",
     };
@@ -56,7 +62,9 @@ export function actualizarProducto(data, id) {
 }
 
 export function borrarProducto(id) {
-  products.splice(id - 1, 1);
+  const index = products.findIndex((product) => product.id === id);
+  products.splice(index, 1);
+
   deleteProduct();
   return products;
 }
