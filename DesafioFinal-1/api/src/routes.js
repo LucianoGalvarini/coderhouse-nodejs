@@ -1,12 +1,9 @@
 import express from "express";
-// import path, { dirname } from "path";
-// import { fileURLToPath } from "url";
-// const __dirname = dirname(fileURLToPath(import.meta.url));
 const { Router } = express;
 const app = express();
 const routerProduct = Router();
 const routerCart = Router();
-import exphbs from "express-handlebars";
+import cors from "cors";
 import {
   actualizarProducto,
   borrarProducto,
@@ -16,55 +13,31 @@ import { products } from "./files.js";
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-const handlebarsConfig = {
-  defaultLayout: "index.handlebars",
-};
-
-app.engine("handlebars", exphbs.engine(handlebarsConfig));
-app.set("view engine", "handlebars");
-app.set("views", "../views");
-app.use(express.static("../views"));
+app.use(cors());
 
 // ---------------------------------------------------- PRODUCTOS ----------------------------------------------------
-
-let isStock = products.length > 0 ? true : false;
-let admin = true;
-
-app.get("/", (req, res) => {
-  res.render("lista", { products, isStock, admin });
-  // res.render("actualizar.handlebars");
-});
-
-app.get("/form", (req, res) => {
-  res.render("formulario");
-});
-
 // Me permite listar todos los productos disponibles o un producto por su id (U y A)
 routerProduct.get("/:id?", (req, res) => {
   if (req.params.id) {
-    res.send(products[req.params.id - 1]);
+    res.json(products[req.params.id - 1]);
   } else {
-    res.send(products);
+    res.json(products);
   }
 });
 
 // Para incorporar productos al listado (A)
 routerProduct.post("/", (req, res) => {
   res.json(cargarProducto(req.body));
-  res.render("formulario");
 });
 
 // Actualiza un producto por su id (A)
 routerProduct.put("/:id", (req, res) => {
   res.json(actualizarProducto(req.body, req.params.id));
-  res.render("lista");
 });
 
 // Borra un producto por su id (A)
 routerProduct.delete("/:id", (req, res) => {
   res.json(borrarProducto(req.params.id));
-  res.render("lista");
 });
 
 // Ruta definida

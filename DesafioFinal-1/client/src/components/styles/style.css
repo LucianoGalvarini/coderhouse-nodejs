@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+/* -------------------------------------------------------- */
+.header {
+  display: flex;
+  column-gap: 200px;
+  height: 75px;
+  width: 100vw;
+  background-color: #8e1b3d;
+  color: white;
+}
+.menu-navegacion {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-navegacion a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px 20px;
+  margin-right: 50px;
+}
+
+.contenedor {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.titulo {
+  width: 100%;
+  font-size: 30px;
+}
+
+.copy {
+  font-weight: 300;
+  font-size: 25px;
+}
+/* -------------------------------------------------------- */
+.listaProductos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 50px;
+  justify-items: center;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border: 1px solid;
+  max-width: 350px;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.imagen {
+  display: flex;
+  width: 250px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 5px;
+}
+
+.bordes {
+  border-top: 1px solid #c8c8c8;
+}
+
+.nombre {
+  height: 50px;
+}
+
+.descripcion {
+  font-size: 15px;
+  height: 80px;
+  overflow-y: scroll;
+}
+
+.precio {
+  font-size: 20px;
+}
+
+.stock {
+  padding: 5px 0;
+}
+
+.botones {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn {
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------- */
+
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  text-align: center;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.forms h2,
+button {
+  grid-column-start: span 2;
+}
+
+.forms button {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.agregarProductos {
+  display: flex;
+  width: 100%;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.formProductos {
+  height: auto;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.btnFormulario {
+  display: flex;
+  height: auto;
+  column-gap: 5px;
+}
+
+.btnFormulario button {
+  height: 40px;
+}
+
+.btnFormulario img {
+  width: 25px;
+  height: 25px;
+}

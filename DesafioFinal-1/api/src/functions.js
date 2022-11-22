@@ -40,7 +40,7 @@ export function actualizarProducto(data, id) {
     let msg = {
       error: "No existe un producto con el id buscado",
     };
-    alert(msg);
+    console.log(msg);
   } else {
     product.nombre = data.nombre;
     product.descripcion = data.descripcion;
@@ -49,7 +49,7 @@ export function actualizarProducto(data, id) {
     product.precio = data.precio;
     product.stock = data.stock;
   }
-  
+
   updateProduct(product);
 
   return product;
