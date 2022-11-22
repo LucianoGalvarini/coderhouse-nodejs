@@ -1,4 +1,9 @@
-import { writeProduct, updateProduct, deleteProduct } from "./files.js";
+import {
+  writeProduct,
+  updateProduct,
+  deleteProduct,
+  writeCarrito,
+} from "./files.js";
 import { products } from "./files.js";
 
 class Product {
@@ -13,13 +18,18 @@ class Product {
 }
 
 class Carrito {
-  constructor(id, timestampCart, products) {
-    this.id = id;
-    this.timestampCart = timestampCart;
-    this.products = products;
+  constructor() {
+    this.products = [];
   }
 }
 
+export function cargarCarrito() {
+  let carrito = new Carrito();
+
+  writeCarrito(carrito);
+
+  return carrito;
+}
 export function cargarProducto(data) {
   let product = new Product(
     data.nombre,

@@ -8,6 +8,7 @@ import {
   actualizarProducto,
   borrarProducto,
   cargarProducto,
+  cargarCarrito,
 } from "./functions.js";
 import { products } from "./files.js";
 
@@ -45,7 +46,9 @@ app.use("/api/productos", routerProduct);
 
 // ---------------------------------------------------- CARRITO ----------------------------------------------------
 // Crea un carrito y devuelve su id (U y A)
-routerCart.post("/", (req, res) => {});
+routerCart.post("/", (req, res) => {
+  res.json(cargarCarrito());
+});
 
 // Vacia un carrito y lo elimina (U y A)
 routerCart.delete("/:id", (req, res) => {});

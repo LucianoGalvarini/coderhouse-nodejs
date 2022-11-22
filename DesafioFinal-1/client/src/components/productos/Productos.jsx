@@ -6,7 +6,7 @@ import Eliminar from "../formularios/Eliminar";
 import AgregarACarrito from "../formularios/AgregarACarrito";
 
 const Productos = () => {
-  const [listProduct, setListProduct] = useState();
+  const [listProduct, setListProduct] = useState([]);
 
   async function handleData() {
     await axios.get("http://localhost:8080/api/productos").then((response) => {
@@ -22,7 +22,7 @@ const Productos = () => {
 
   return (
     <div className="listaProductos mt-3">
-      {listProduct &&
+      {listProduct.length > 0 &&
         listProduct.map((product) => (
           <div key={product.id} className="producto">
             <div className="imagen">
@@ -45,9 +45,11 @@ const Productos = () => {
             </div>
           </div>
         ))}
-      <div>
-        <h2>No hay productos</h2>
-      </div>
+      {listProduct.length < 1 && (
+        <div>
+          <h2>No hay productos</h2>
+        </div>
+      )}
     </div>
   );
 };

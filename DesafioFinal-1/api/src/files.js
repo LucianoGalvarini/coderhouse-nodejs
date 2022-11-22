@@ -37,3 +37,19 @@ export function updateProduct(data) {
 export function deleteProduct() {
   fs.writeFileSync("productos.json", JSON.stringify(products, null, 2));
 }
+
+/* --------------------------------------------------------------------------- */
+
+export function writeCarrito(data) {
+  let lastId = carts.reduce(
+    (acc, item) => (item.id > acc ? (acc = item.id) : acc),
+    0
+  );
+  let newCart = {
+    id: lastId + 1,
+    timestamp: new Date().toLocaleString(),
+    ...data,
+  };
+  carts.push(newCart);
+  fs.writeFileSync("carritos.json", JSON.stringify(carts, null, 2));
+}
