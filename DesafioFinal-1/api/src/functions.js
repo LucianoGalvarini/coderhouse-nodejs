@@ -1,10 +1,4 @@
-import {
-  writeProduct,
-  updateProduct,
-  deleteProduct,
-  writeCarrito,
-  saveProdCart,
-} from "./files.js";
+import { writeJsonProduct, writeJsonCart } from "./files.js";
 import { products, carts } from "./files.js";
 
 class Product {
@@ -33,7 +27,20 @@ export function cargarProducto(data) {
     data.precio,
     data.stock
   );
-  writeProduct(product);
+
+  let lastId = products.reduce(
+    (acc, item) => (item.id > acc ? (acc = item.id) : acc),
+    0
+  );
+  let newProduct = {
+    id: lastId + 1,
+    timestamp: new Date().toLocaleString(),
+    ...product,
+  };
+
+  products.push(newProduct);
+
+  writeJsonProduct();
 
   return product;
 }
@@ -60,8 +67,13 @@ export function actualizarProducto(data, id) {
     product.stock = data.stock;
   }
 
-  updateProduct(product);
+  let idProductos = products.map((product) => product.id);
 
+  if (idProductos.indexOf(product.id) === -1) {
+    products.push(product);
+  }
+
+  writeJsonProduct();
   return product;
 }
 
@@ -69,7 +81,7 @@ export function borrarProducto(id) {
   const index = products.findIndex((product) => product.id === id);
   products.splice(index, 1);
 
-  deleteProduct();
+  writeJsonProduct();
   return products;
 }
 
@@ -87,19 +99,60 @@ export function cargarCarrito() {
     timestamp: new Date().toLocaleString(),
     ...carrito,
   };
+  carts.push(newCart);
 
-  writeCarrito(newCart);
-
+  writeJsonCart();
   return newCart.id;
 }
 
-export function mostrarCarrito() {
-  
+export function mostrarCarrito(idCart) {
+  const index = carts.findIndex((cart) => cart.id == idCart);
+
+  return carts[index];
 }
 
 export function addProdCart(idCart, idProd) {
+  const prodsCartSelect = carts[idCart - 1].products;
   const index = products.findIndex((product) => product.id == idProd);
+  const productSelect = products[index];
 
-  saveProdCart(idCart, products[index]);
+  let productStock = {
+    ...productSelect,
+  };
+
+  const indexProdCart = prodsCartSelect.findIndex(
+    (prod) => prod.id == products[index].id
+  );
+
+  if (indexProdCart !== -1) {
+    prodsCartSelect.splice(indexProdCart, 1);
+    products[index].stock--;
+    productStock.stock++;
+    prodsCartSelect.push(productStock);
+  } else {
+    productStock.stock = 1;
+    products[index].stock--;
+    prodsCartSelect.push(productStock);
+  }
+
+  writeJsonProduct();
+  writeJsonCart();
   return products;
+}
+
+export function deleteCartProd(idCart, idProd) {
+  const indexCart = carts.findIndex((cart) => cart.id == idCart);
+  const indexProd = carts[indexCart].products.findIndex(
+    (prod) => prod.id == idProd
+  );
+
+  carts[indexCart].products.splice(indexProd, 1);
+  writeJsonCart();
+}
+
+export function deleteCart(idCart) {
+  const indexCart = carts.findIndex((cart) => cart.id == idCart);
+  carts.splice(indexCart, 1);
+
+  writeJsonCart();
 }

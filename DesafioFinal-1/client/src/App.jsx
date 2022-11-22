@@ -4,7 +4,7 @@ import "./App.css";
 
 import Productos from "./components/productos/Productos";
 import NavBar from "./components/NavBar";
-import Agregar from "./components/formularios/Agregar";
+import Agregar from "./components/productos/Agregar";
 import Inicio from "./components/Inicio";
 
 function App() {

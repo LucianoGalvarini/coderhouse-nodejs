@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/style.css";
-import Actualizar from "../formularios/Actualizar";
-import Eliminar from "../formularios/Eliminar";
-import AgregarACarrito from "../formularios/AgregarACarrito";
+import Actualizar from "./Actualizar";
+import Eliminar from "./Eliminar";
+import AgregarACarrito from "../carritos/AgregarACarrito";
 import Cookies from "universal-cookie";
+import Carrito from "../carritos/Carrito";
 
 const Productos = () => {
   const [listProduct, setListProduct] = useState([]);
@@ -23,7 +24,7 @@ const Productos = () => {
 
   async function handleSubmit() {
     await axios
-      .get(`http://localhost:8080/api/carrito/${cookies.get(cart)}/productos`)
+      .get(`http://localhost:8080/api/carrito/${cookies.get("cart")}/productos`)
       .then((response) => {
         if (response.status === 200) {
           setCart(response.data);
@@ -32,12 +33,13 @@ const Productos = () => {
   }
 
   useEffect(() => {
-    handleData();
     handleSubmit();
+    handleData();
   }, []);
 
   return (
-    <div className="listaProductos mt-3">
+    <div className="listaProductos">
+      <Carrito data={cart} />
       {listProduct.length > 0 &&
         listProduct.map((product) => (
           <div key={product.id} className="producto">

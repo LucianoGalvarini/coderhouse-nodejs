@@ -113,6 +113,7 @@ a:hover {
   width: 100%;
   padding: 10px;
   background-color: #fff;
+  margin-top: 50px;
 }
 
 .imagen {
@@ -227,6 +228,68 @@ button {
 }
 
 .btnFormulario img {
+  width: 25px;
+  height: 25px;
+}
+
+/* ---------------------------------- */
+.carrito {
+  position: fixed;
+  top: 80;
+  right: 0;
+}
+
+.carrito button {
+  margin-right: 15px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid;
+}
+
+.carrito img {
+  width: 35px;
+  height: 35px;
+}
+
+/* ----------------------------------------------------------- */
+.modalCart {
+  display: flex;
+  width: 100vw;
+}
+
+.modalProdList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 30px;
+  margin: 0;
+  height: 450px;
+  overflow-y: scroll;
+}
+
+.modalProdList .producto {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.modalProdList .producto img,
+.modalProdList .producto .informacion,
+.modalProdList .producto .informacion .nombre,
+.modalProdList .producto .informacion .descripcion,
+.modalProdList .producto .informacion .precio,
+.modalProdList .producto .informacion .stock {
+  height: 60%;
+}
+
+.borrarCarrito {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;;
+}
+
+.borrarCarrito img {
+  color: white;
   width: 25px;
   height: 25px;
 }

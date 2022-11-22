@@ -3,16 +3,14 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 
 const AgregarACarrito = (data) => {
-  
   const cookies = new Cookies();
 
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-
+  async function handleSubmit() {
     await axios
       .post(
-        `http://localhost:8080/api/carrito/${cookies.get("cart")}/productos/${data.data.id}`
+        `http://localhost:8080/api/carrito/${cookies.get("cart")}/productos/${
+          data.data.id
+        }`
       )
       .then((response) => {
         if (response.status === 200) {
