@@ -1,32 +1,18 @@
 [
   {
     "id": 1,
-    "timestamp": "22/11/2022 18:48:36",
-    "products": []
-  },
-  {
-    "id": 2,
-    "timestamp": "22/11/2022 21:38:14",
-    "products": []
-  },
-  {
-    "id": 3,
-    "timestamp": "22/11/2022 21:43:19",
-    "products": []
-  },
-  {
-    "id": 4,
-    "timestamp": "22/11/2022 21:43:23",
-    "products": []
-  },
-  {
-    "id": 5,
-    "timestamp": "22/11/2022 21:43:28",
-    "products": []
-  },
-  {
-    "id": 6,
-    "timestamp": "22/11/2022 21:43:31",
-    "products": []
+    "timestamp": "23/11/2022 00:22:54",
+    "products": [
+      {
+        "id": 2,
+        "timestamp": "22/11/2022 17:58:55",
+        "nombre": "Sneakers Vizzano Urbanas Sneakers 1389",
+        "descripcion": "-Artículo 1389. -Zapatilla acordonada clásica lisa. -Material de capellada sintético. -Numeración del 35 al 40. -Plantilla confort super cómoda de gran calce. -Disponible en color Blanco y Rosa. -Base de goma. -Taco de 4 cm de altura. -Plataforma de 2,5 cm.",
+        "codigo": "sd921as",
+        "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_796379-MLA52203263871_102022-O.webp",
+        "precio": "15990",
+        "stock": 2
+      }
+    ]
   }
 ]

@@ -32,41 +32,23 @@ routerProduct.get("/:id", (req, res) => {
 // Recibe y agrega un producto y lo devuelve con su id asignado
 
 routerProduct.post("/", (req, res) => {
-  if (productos.length > 0) {
-    let lastId = productos.reduce(
-      (acc, item) => (item.id > acc ? (acc = item.id) : acc),
-      0
-    );
+  let lastId = productos.reduce(
+    (acc, item) => (item.id > acc ? (acc = item.id) : acc),
+    0
+  );
 
-    let newProduct = {
-      id: lastId + 1,
-      ...req.body,
-    };
+  let newProduct = {
+    id: lastId + 1,
+    ...req.body,
+  };
 
-    productos.push(newProduct);
-    res.json(newProduct);
-  } else {
-    let newProduct = {
-      id: 1,
-      ...req.body,
-    };
-
-    productos.push(newProduct);
-    res.json(newProduct);
-  }
+  productos.push(newProduct);
+  res.json(newProduct);
 });
 
 // Recibe y actualiza un producto segun su id
 
 routerProduct.put("/:id", (req, res) => {
-  // const product = productos[req.body.id - 1];
-
-  // if(productos.indexOf(product) === -1) {
-  //   res.json(msg)
-  // } else {
-
-  // }
-
   const product = productos[req.params.id - 1];
 
   if (productos.indexOf(product) === -1) {
@@ -83,11 +65,10 @@ routerProduct.put("/:id", (req, res) => {
 // Elimina un producto segun su id
 
 routerProduct.delete("/:id", (req, res) => {
-  // productos.splice(req.body.id - 1, 1);
-  // res.json(productos);
   productos.splice(req.params.id - 1, 1);
   res.json(productos);
 });
+
 
 // --------------------------------------------------------------------------------------------------------
 
