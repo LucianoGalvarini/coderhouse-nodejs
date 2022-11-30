@@ -1,0 +1,72 @@
+show dbs
+use ecommerce
+
+db.createCollection("mensajes")
+db.createCollection("productos")
+
+show collections 
+
+1,2)
+    db.mensajes.insertOne({author: "galvariniluciano@gmail.com",text: "Hola",fecha: "28/11/2022 17:00:28"})
+    db.mensajes.insertOne({author: "luciano@gmail.com",text: "Como estas?",fecha: "28/11/2022 18:00:29"})
+    db.mensajes.insertOne({author: "galvariniluciano@gmail.com",text: "Todo bien",fecha: "28/11/2022 18:00:35"})
+    db.mensajes.insertOne({author: "galvariniluciano@gmail.com",text: "y vos?",fecha: "28/11/2022 18:00:36"})
+    db.mensajes.insertOne({author: "luciano@gmail.com",text: "Bien",fecha: "28/11/2022 18:00:40"})
+    db.mensajes.insertOne({author: "luciano@gmail.com",text: "Gracias por preguntar",fecha: "28/11/2022 18:00:42"})
+    db.mensajes.insertOne({author: "galvariniluciano@gmail.com",text: "Que estas haciendo?",fecha: "28/11/2022 18:00:46"})
+    db.mensajes.find({author: "luciano@gmail.com",text: "Estoy estudiando",fecha: "28/11/2022 18:00:52"})
+    db.mensajes.insertOne({author: "luciano@gmail.com",text: "Con un curso de coderhouse",fecha: "28/11/2022 18:00:56"})
+    db.mensajes.insertOne({author: "galvariniluciano@gmail.com",text: "Que lenguaje estudias?",fecha: "28/11/2022 18:01:06"})
+    db.mensajes.insertOne({author: "luciano@gmail.com",text: "Estoy estudiando Node.js",fecha: "28/11/2022 18:01:15"})
+
+    db.productos.insertOne({title: "Hielo", price: 120, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_789546-MLA49840186744_052022-O.webp"})
+    db.productos.insertOne({title: "Coca Cola", price: 580, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_997720-MLA52148201030_102022-O.webp"})
+    db.productos.insertOne({title: "Vodka Bols", price: 900, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_900957-MLA52448029226_112022-O.webp"})
+    db.productos.insertOne({title: "Vodka Smirnoff", price: 1280, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_738686-MLA31061648912_062019-O.webp"})
+    db.productos.insertOne({title: "Fernet Branca", price: 1700, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_950861-MLA44885730605_022021-O.webp"})
+    db.productos.insertOne({title: "Gin Gordons", price: 2300, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_936144-MLA31019726331_062019-O.webp"})
+    db.productos.insertOne({title: "Gin Aconcagua", price: 2860, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_734232-MLA47585130810_092021-O.webp"})
+    db.productos.insertOne({title: "Gin Principe De Los Apostoles", price: 3350, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_910025-MLA51356762943_082022-O.webp"})
+    db.productos.insertOne({title: "Gin Beefeater", price: 4320, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_995832-MLA51838188478_102022-O.webp"})
+    db.productos.insertOne({title: "Gin Bombay", price: 4990, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_669612-MLA43643320606_102020-O.webp"})
+3)
+    db.mensajes.find()
+    db.productos.find()
+4)
+    db.mensajes.stats().count
+    db.productos.stats().count
+5)
+    a)
+        db.productos.insertOne({title: "Gin Bulldog", price: 4570, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_660345-MLA45823526946_052021-O.webp"})
+    b) db.productos.find({title: "Gin Bulldog"})
+        i) db.productos.find({"price": {$lt: 1000}})
+        ii) db.productos.find({"price": {$gte: 1000, $lte: 3000}})
+        iii) db.productos.find({"price": {$gt: 3000}})
+        iv) db.productos.find({},{_id:0,title:1}).sort({price:1}).limit(1).skip(2) 
+    c) db.productos.updateMany({}, {$set: {stock: 100}})
+    d) db.productos.updateMany({price: {$gt: 4000}}, {$set: {stock: 0}})
+    e) db.productos.deleteMany({price: {$lt: 1000}})
+6) db.createUser(
+  {
+    user: "pepe",
+    pwd: "asd456",
+    roles: [
+       { role: "read", db: "ecommerce" }
+    ]
+  }
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
