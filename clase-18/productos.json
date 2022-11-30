@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "6386b0f7e17b5c867f85ec74"
+  },
+  "title": "Vodka Smirnoff",
+  "price": 1280,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_738686-MLA31061648912_062019-O.webp",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6386b0fae17b5c867f85ec75"
+  },
+  "title": "Fernet Branca",
+  "price": 1700,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_950861-MLA44885730605_022021-O.webp",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6386b102e17b5c867f85ec76"
+  },
+  "title": "Gin Gordons",
+  "price": 2300,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_936144-MLA31019726331_062019-O.webp",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6386b105e17b5c867f85ec77"
+  },
+  "title": "Gin Aconcagua",
+  "price": 2860,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_734232-MLA47585130810_092021-O.webp",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6386b109e17b5c867f85ec78"
+  },
+  "title": "Gin Principe De Los Apostoles",
+  "price": 3350,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_910025-MLA51356762943_082022-O.webp",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6386b10be17b5c867f85ec79"
+  },
+  "title": "Gin Beefeater",
+  "price": 4320,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_995832-MLA51838188478_102022-O.webp",
+  "stock": 0
+},{
+  "_id": {
+    "$oid": "6386b10ee17b5c867f85ec7a"
+  },
+  "title": "Gin Bombay",
+  "price": 4990,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_669612-MLA43643320606_102020-O.webp",
+  "stock": 0
+},{
+  "_id": {
+    "$oid": "6386be05e17b5c867f85ec7b"
+  },
+  "title": "Gin Bulldog",
+  "price": 4570,
+  "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_660345-MLA45823526946_052021-O.webp",
+  "stock": 0
+}]

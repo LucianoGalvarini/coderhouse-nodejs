@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "6386a8cde17b5c867f85ec67"
+  },
+  "author": "galvariniluciano@gmail.com",
+  "text": "Hola",
+  "fecha": "28/11/2022 17:00:28"
+},{
+  "_id": {
+    "$oid": "6386a938e17b5c867f85ec68"
+  },
+  "author": "luciano@gmail.com",
+  "text": "Como estas?",
+  "fecha": "28/11/2022 18:00:29"
+},{
+  "_id": {
+    "$oid": "6386a981e17b5c867f85ec69"
+  },
+  "author": "galvariniluciano@gmail.com",
+  "text": "Todo bien",
+  "fecha": "28/11/2022 18:00:35"
+},{
+  "_id": {
+    "$oid": "6386a992e17b5c867f85ec6a"
+  },
+  "author": "galvariniluciano@gmail.com",
+  "text": "y vos?",
+  "fecha": "28/11/2022 18:00:36"
+},{
+  "_id": {
+    "$oid": "6386a9cde17b5c867f85ec6b"
+  },
+  "author": "luciano@gmail.com",
+  "text": "Bien",
+  "fecha": "28/11/2022 18:00:40"
+},{
+  "_id": {
+    "$oid": "6386a9dbe17b5c867f85ec6c"
+  },
+  "author": "luciano@gmail.com",
+  "text": "Gracias por preguntar",
+  "fecha": "28/11/2022 18:00:42"
+},{
+  "_id": {
+    "$oid": "6386aa0ce17b5c867f85ec6d"
+  },
+  "author": "galvariniluciano@gmail.com",
+  "text": "Que estas haciendo?",
+  "fecha": "28/11/2022 18:00:46"
+},{
+  "_id": {
+    "$oid": "6386aa44e17b5c867f85ec6e"
+  },
+  "author": "luciano@gmail.com",
+  "text": "Con un curso de coderhouse",
+  "fecha": "28/11/2022 18:00:56"
+},{
+  "_id": {
+    "$oid": "6386aa8de17b5c867f85ec6f"
+  },
+  "author": "galvariniluciano@gmail.com",
+  "text": "Que lenguaje estudias?",
+  "fecha": "28/11/2022 18:01:06"
+},{
+  "_id": {
+    "$oid": "6386aaa4e17b5c867f85ec70"
+  },
+  "author": "luciano@gmail.com",
+  "text": "Estoy estudiando Node.js",
+  "fecha": "28/11/2022 18:01:15"
+}]
