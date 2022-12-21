@@ -1,0 +1,5 @@
+1° - Asignar los datos que correspondan en el archivo "optionsMariaDB"
+2° - Crear base de datos con el nombre que asignado en "optionsMariaDB"
+3° - Ejecutar "npm run build"
+4° - Ejecutar "cd tables" y luego "node table_msg"
+5° - Ejecutar "cd ../src" y luego "node server"
