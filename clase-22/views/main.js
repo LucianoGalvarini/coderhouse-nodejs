@@ -1,19 +1,51 @@
 const socket = io.connect();
+
 // ------------------------- Muestra mensajes -------------------------
 
-function renderMsg(data) {
-  const html = data
+function renderMsg(data, result) {
+  const authorSchema = new normalizr.schema.Entity("author");
+  const msgSchema = new normalizr.schema.Entity(
+    "messages",
+    {
+      author: authorSchema,
+    },
+    { idAttribute: "id" }
+  );
+
+  const denormalizeData = normalizr.denormalize(
+    data.result,
+    [msgSchema],
+    data.entities
+  );
+
+  const html = denormalizeData
     .map((msg) => {
       return `
           <div class="mensaje">
             <strong >${msg.author.id}</strong>
             <p>[${msg.date}]: </p>
             <em>${msg.text}</em>
+            <img
+              src="${msg.author.avatar}"
+              style="width: 30px; height: 30px; margin-left: 10px;"
+            />
           </div>
           `;
     })
     .join(" ");
   document.getElementById("messages").innerHTML = html;
+
+  let centerMsg;
+
+  if (result > 0) {
+    centerMsg = Math.round(result);
+  } else {
+    centerMsg = 0;
+  }
+
+  document.getElementById(
+    "centroMsg"
+  ).innerHTML = `Centro de mensajes - (Compresión: %${centerMsg})`;
 }
 
 // ------------------------- Muestra lista de productos -------------------------
@@ -64,7 +96,7 @@ async function renderProductList(productos) {
   }
 }
 
-socket.on("messages", (data) => renderMsg(data));
+socket.on("messages", (data, result) => renderMsg(data, result));
 socket.on("productos", (productos) => renderProductList(productos));
 
 // ------------------------- Formulario de  mensajes -------------------------
@@ -72,14 +104,21 @@ socket.on("productos", (productos) => renderProductList(productos));
 function addMessage() {
   const inputEmail = document.getElementById("email");
   const inputNombre = document.getElementById("nombre");
-  const inputApellido = document.getElementById("nombre");
-  const inputEdad = document.getElementById("nombre");
-  const inputAlias = document.getElementById("nombre");
-  const inputAvatar = document.getElementById("nombre");
-
+  const inputApellido = document.getElementById("apellido");
+  const inputEdad = document.getElementById("edad");
+  const inputAlias = document.getElementById("alias");
+  const inputAvatar = document.getElementById("avatar");
   const inputText = document.getElementById("texto");
 
-  if (inputEmail.value && inputTexto.value) {
+  if (
+    inputEmail.value &&
+    inputNombre.value &&
+    inputApellido.value &&
+    inputEdad.value &&
+    inputAlias.value &&
+    inputAvatar.value &&
+    inputText.value
+  ) {
     const mensaje = {
       author: {
         id: inputEmail.value,

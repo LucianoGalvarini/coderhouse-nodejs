@@ -1,5 +1,5 @@
-1° - Asignar los datos que correspondan en el archivo "optionsMariaDB"
-2° - Crear base de datos con el nombre que asignado en "optionsMariaDB"
-3° - Ejecutar "npm run build"
-4° - Ejecutar "cd tables" y luego "node table_msg"
-5° - Ejecutar "cd ../src" y luego "node server"
+1° - Asignar los datos que correspondan en el archivo "optionsMariaDB" dentro de la carpeta "tables"
+2° - Crear base de datos en XAMPP con el nombre que asignado en "optionsMariaDB"
+3° - Ejecutar "npm run build" para que se cree la tabla en la base de datos
+4° - Cambiar el valor del archivo .env segun corresponda (ruta donde guardamos el archivo que se descarga al hacer click en "Generar nueva clave privada" en firebase)
+5° - Ejecutar "npm start"

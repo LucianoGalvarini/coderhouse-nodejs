@@ -45,23 +45,62 @@
 </div>
 
 <div class="msgSection">
-  <h2>Centro de mensajes</h2>
-  <div id="messages" class="messages"></div>
+  <h2 id="centroMsg"></h2>
   <form onsubmit="return addMessage(this)" class="form-msg">
-    <input
-      type="email"
-      class="form-control"
-      maxlength="30"
-      id="email"
-      placeholder="Escriba su email"
-    />
-    <input
-      type="text"
-      class="form-control"
-      maxlength="30"
-      id="texto"
-      placeholder="Escriba el mensaje"
-    />
-    <input type="submit" class="btn btn-success pe-5 ps-5" value="Enviar" />
+    <div class="column1">
+      <input
+        type="email"
+        class="form-control"
+        maxlength="30"
+        id="email"
+        placeholder="Escriba su email"
+      />
+      <input
+        type="text"
+        class="form-control"
+        maxlength="30"
+        id="nombre"
+        placeholder="Escriba su nombre"
+      />
+      <input
+        type="text"
+        class="form-control"
+        maxlength="30"
+        id="apellido"
+        placeholder="Escriba su apellido"
+      />
+      <input
+        type="number"
+        class="form-control"
+        maxlength="30"
+        id="edad"
+        placeholder="Escriba su edad"
+      />
+      <input
+        type="text"
+        class="form-control"
+        maxlength="30"
+        id="alias"
+        placeholder="Escriba su alias"
+      />
+      <input
+        type="text"
+        class="form-control"
+        id="avatar"
+        placeholder="Ingrese su avatar"
+      />
+    </div>
+    <div class="column2">
+      <textarea
+        maxlength="30"
+        id="texto"
+        placeholder="Escriba el mensaje"
+        cols="40"
+        rows="5"
+      ></textarea>
+      <input type="submit" class="btn btn-success pe-5 ps-5" value="Enviar" />
+    </div>
   </form>
+  <div id="messages" class="messages"></div>
+
 </div>
