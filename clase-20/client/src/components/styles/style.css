@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(242, 243, 250);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+/* -------------------------------------------------------- */
+.header {
+  display: flex;
+  column-gap: 200px;
+  height: 75px;
+  width: 100vw;
+  background-color: #8e1b3d;
+  color: white;
+}
+.menu-navegacion {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-navegacion a {
+  border: 1px solid;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px 20px;
+  margin-right: 50px;
+}
+
+.menu-navegacion a:hover {
+  background-color: white;
+  color: #8e1b3d;
+}
+
+.contenedor {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.titulo {
+  width: 100%;
+  font-size: 30px;
+}
+
+.copy {
+  font-weight: 300;
+  font-size: 25px;
+}
+/* -------------------------------------------------------- */
+
+/* -------------------------------------------------------- */
+.inicio {
+  display: flex;
+  column-gap: 100px;
+  width: 100vw;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.inicio button {
+  font-size: 35px;
+  font-weight: 700;
+  color: white;
+  background-color: #8e1b3d;
+  padding: 20px 90px;
+}
+
+.inicio button:hover {
+  color: #8e1b3d;
+  background-color: white;
+}
+
+/* -------------------------------------------------------- */
+.listaProductos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  column-gap: 40px;
+  row-gap: 40px;
+  padding: 20px 150px;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  margin-top: 50px;
+}
+
+.imagen {
+  display: flex;
+  width: 250px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.imagen img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 5px;
+}
+
+.bordes {
+  border-top: 1px solid #c8c8c8;
+}
+
+.nombre {
+  max-height: auto;
+}
+
+.descripcion {
+  font-size: 15px;
+  height: 80px;
+  overflow-y: scroll;
+}
+
+.precio {
+  font-size: 20px;
+}
+
+.stock {
+  padding: 5px 0;
+}
+
+.botones {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn {
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------- */
+
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  text-align: center;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.forms h2,
+button {
+  grid-column-start: span 2;
+}
+
+.forms button {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.agregarProductos {
+  display: flex;
+  width: 100%;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.formProductos {
+  height: auto;
+  border: 2px solid;
+  border-radius: 10px;
+  width: 500px;
+  background-color: #fff;
+}
+
+.btnFormulario {
+  display: flex;
+  height: auto;
+  column-gap: 5px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btnFormulario-admin {
+  display: flex;
+  column-gap: 5px;
+}
+
+.btnFormulario button {
+  height: 40px;
+}
+
+.btnFormulario img {
+  width: 25px;
+  height: 25px;
+}
+
+/* ---------------------------------- */
+.carrito {
+  position: fixed;
+  top: 80;
+  right: 0;
+}
+
+.carrito button {
+  margin-right: 15px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid;
+}
+
+.carrito img {
+  width: 35px;
+  height: 35px;
+}
+
+/* ----------------------------------------------------------- */
+.modalCart {
+  display: flex;
+  width: 100vw;
+}
+
+.modalProdList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 30px;
+  margin: 0;
+  height: 520px;
+  overflow-y: scroll;
+}
+
+.modalProdList .producto {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  height: 500px;
+}
+
+.modalProdList .producto img,
+.modalProdList .producto .informacion,
+.modalProdList .producto .informacion .nombre,
+.modalProdList .producto .informacion .descripcion,
+.modalProdList .producto .informacion .precio,
+.modalProdList .producto .informacion .stock {
+  height: 60%;
+}
+
+.borrarCarrito {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.borrarCarrito img {
+  color: white;
+  width: 25px;
+  height: 25px;
+}

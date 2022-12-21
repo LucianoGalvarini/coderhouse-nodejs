@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "timestamp": "23/11/2022 00:22:54",
+    "products": [
+      {
+        "id": 2,
+        "timestamp": "22/11/2022 17:58:55",
+        "nombre": "Sneakers Vizzano Urbanas Sneakers 1389",
+        "descripcion": "-Artículo 1389. -Zapatilla acordonada clásica lisa. -Material de capellada sintético. -Numeración del 35 al 40. -Plantilla confort super cómoda de gran calce. -Disponible en color Blanco y Rosa. -Base de goma. -Taco de 4 cm de altura. -Plataforma de 2,5 cm.",
+        "codigo": "sd921as",
+        "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_796379-MLA52203263871_102022-O.webp",
+        "precio": "15990",
+        "stock": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "timestamp": "30/11/2022 23:24:20",
+    "products": []
+  },
+  {
+    "id": 3,
+    "timestamp": "30/11/2022 23:27:39",
+    "products": [
+      {
+        "id": 1,
+        "timestamp": "22/11/2022 17:55:46",
+        "nombre": "Sneakers Urbana Briganti Casual Sneakers Romeo",
+        "descripcion": "Tan solo una marca como Briganti puede ofrecer cada temporada colecciones inspiradas en las últimas tendencias, además de la auténtica artesanía zapatera perfeccionada a lo largo de los años.",
+        "codigo": "sa414sd",
+        "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_866355-MLA50496017131_062022-O.webp",
+        "precio": "23975",
+        "stock": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "timestamp": "30/11/2022 23:28:01",
+    "products": []
+  }
+]
