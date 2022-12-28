@@ -1,0 +1,119 @@
+<div class="userLogin">
+  <form onsubmit="return logout(this)">
+    <div class="divLogout">
+      <h2>Bienvenido </h2>
+      <input
+        type="submit"
+        class="btn btn-warning ps-5 pe-5 ms-3"
+        value="Desloguear"
+      />
+    </div>
+  </form>
+
+</div>
+<div class="formProductos">
+
+  <h2>Cargar producto</h2>
+  <form onsubmit="return addProduct(this)">
+    <div class="mb-3 row">
+      <label for="inputTitle" class="col-sm-2 col-form-label">Nombre</label>
+      <div class="col-sm-10">
+        <input type="text" name="title" class="form-control" id="inputTitle" />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputPrice" class="col-sm-2 col-form-label">Precio</label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          name="price"
+          class="form-control"
+          id="inputPrice"
+        />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputThumbnail" class="col-sm-2 col-form-label">URL foto</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          name="thumbnail"
+          class="form-control"
+          id="inputThumbnail"
+        />
+      </div>
+    </div>
+
+    <div class="col-auto">
+      <input type="submit" class="btn btn-warning ps-5 pe-5" value="Cargar" />
+    </div>
+  </form>
+
+</div>
+
+<div class="listProduct">
+  <h2>Vista de productos</h2>
+  <div id="divTable">
+  </div>
+</div>
+
+<div class="msgSection">
+  <h2 id="centroMsg"></h2>
+  <form onsubmit="return addMessage(this)" class="form-msg">
+    <div class="column1">
+      <input
+        type="email"
+        class="form-control"
+        maxlength="30"
+        id="email"
+        placeholder="Escriba su email"
+      />
+      <input
+        type="text"
+        class="form-control"
+        maxlength="30"
+        id="nombre"
+        placeholder="Escriba su nombre"
+      />
+      <input
+        type="text"
+        class="form-control"
+        maxlength="30"
+        id="apellido"
+        placeholder="Escriba su apellido"
+      />
+      <input
+        type="number"
+        class="form-control"
+        maxlength="30"
+        id="edad"
+        placeholder="Escriba su edad"
+      />
+      <input
+        type="text"
+        class="form-control"
+        maxlength="30"
+        id="alias"
+        placeholder="Escriba su alias"
+      />
+      <input
+        type="text"
+        class="form-control"
+        id="avatar"
+        placeholder="Ingrese su avatar"
+      />
+    </div>
+    <div class="column2">
+      <textarea
+        maxlength="30"
+        id="texto"
+        placeholder="Escriba el mensaje"
+        cols="40"
+        rows="5"
+      ></textarea>
+      <input type="submit" class="btn btn-success pe-5 ps-5" value="Enviar" />
+    </div>
+  </form>
+  <div id="messages" class="messages"></div>
+
+</div>

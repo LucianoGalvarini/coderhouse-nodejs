@@ -8,6 +8,11 @@ const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 const { normalize, schema } = require("normalizr");
 
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+
 const { options } = require("../tables/optionsMariaDB");
 const knexMariaDB = require("knex")(options);
 
@@ -23,9 +28,31 @@ app.set("view engine", "handlebars");
 app.set("views", "./views");
 app.use(express.static("./views"));
 
+app.use(cookieParser());
+app.use(
+  session({
+    store: MongoStore.create({
+      mongoUrl:
+        "mongodb+srv://coderhouse:tqKlxYUIX25Hk7dj@cluster0.w6djkta.mongodb.net/test",
+      mongoOptions: advancedOptions,
+    }),
+
+    secret: "secreto",
+    resave: false,
+    saveUninitialized: false,
+    // cookie: {
+    //   maxAge: 30000,
+    // },
+  })
+);
+
 // ------------------------------------------------------------
 
 app.get("/", (req, res) => {
+  res.render("login.handlebars");
+});
+
+app.get("/home", (req, res) => {
   res.render("main.handlebars");
 });
 
