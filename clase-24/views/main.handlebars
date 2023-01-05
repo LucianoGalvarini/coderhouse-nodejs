@@ -1,15 +1,13 @@
 <div class="userLogin">
-  <form onsubmit="return logout(this)">
+  <form action="/logout" method="post">
     <div class="divLogout">
-      <h2>Bienvenido </h2>
-      <input
-        type="submit"
-        class="btn btn-warning ps-5 pe-5 ms-3"
-        value="Desloguear"
-      />
+      <h2>Bienvenido
+        {{username.user}}</h2>
+      <button type="submit" class="btn btn-warning ps-5 pe-5 ms-3">
+        Desloguear
+      </button>
     </div>
   </form>
-
 </div>
 <div class="formProductos">
 

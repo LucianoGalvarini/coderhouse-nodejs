@@ -8,15 +8,13 @@ const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 const { normalize, schema } = require("normalizr");
 
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
-const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+// ------------------ faker ------------------
 
-const { options } = require("../tables/optionsMariaDB");
+const { options } = require("../options/config");
 const knexMariaDB = require("knex")(options);
+const { generateProducts } = require("../db/productos-test");
 
-const { generateProducts } = require("../api/productos-test");
+// ------------------ faker ------------------
 
 const handlebarsConfig = {
   defaultLayout: "index.handlebars",
@@ -28,32 +26,61 @@ app.set("view engine", "handlebars");
 app.set("views", "./views");
 app.use(express.static("./views"));
 
+// --------------------------------- SESSION  ---------------------------------
+
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+
 app.use(cookieParser());
 app.use(
   session({
     store: MongoStore.create({
-      mongoUrl:
-        "mongodb+srv://coderhouse:tqKlxYUIX25Hk7dj@cluster0.w6djkta.mongodb.net/test",
+      mongoUrl: process.env.MONGO_PATH,
       mongoOptions: advancedOptions,
+      ttl: 600,
     }),
 
-    secret: "secreto",
+    secret: "secret",
     resave: false,
     saveUninitialized: false,
-    // cookie: {
-    //   maxAge: 30000,
-    // },
+    cookie: {
+      maxAge: 600000,
+    },
   })
 );
 
-// ------------------------------------------------------------
+app.post("/logout", (req, res) => {
+  req.session.destroy();
+  let cookies = req.cookies;
+  for (let cookie in cookies) {
+    res.clearCookie(cookie);
+  }
+  res.redirect("/");
+});
+
+let username;
+
+app.post("/", (req, res) => {
+  username = req.body;
+
+  if (req.session.counter) {
+    req.session.counter++;
+  } else {
+    req.session.counter = 1;
+  }
+  res.redirect("/home");
+});
+
+// --------------------------------- SESSION  ---------------------------------
 
 app.get("/", (req, res) => {
   res.render("login.handlebars");
 });
 
 app.get("/home", (req, res) => {
-  res.render("main.handlebars");
+  res.render("main.handlebars", { username });
 });
 
 // ---------------------------- FAKER ----------------------------

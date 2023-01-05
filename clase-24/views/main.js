@@ -159,14 +159,15 @@ function addProduct() {
   return false;
 }
 
-function createUser() {
-  const inputUser = document.getElementById("inputUser");
+// function setCookie(cname, cvalue, exminutes) {
+//   var d = new Date();
+//   d.setTime(d.getTime() + exminutes * 60 * 1000);
+//   var expires = "expires=" + d.toUTCString();
+//   document.cookie =
+//     cname + "=" + cvalue + "; SameSite=None; Secure; " + expires + ";path=/";
+// }
 
-  if (inputUser.value) {
-  }
-
-}
-
-function logout() {
-  
-}
+// function createUser() {
+//   const loginUser = document.getElementById("loginUser");
+//   setCookie("login", loginUser.value, 10);
+// }

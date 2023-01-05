@@ -105,13 +105,24 @@ em {
   margin: 0 5px;
 }
 
-.login,
 .userLogin {
   display: flex;
   align-items: center;
   justify-content: center;
   grid-column-start: span 2;
   width: 100%;
+}
+
+.login {
+  display: block;
+  grid-column-start: span 2;
+  width: 300px;
+}
+
+.btnLogin,
+.btnLogin:hover {
+  text-decoration: none;
+  color: black;
 }
 
 .divLogout {

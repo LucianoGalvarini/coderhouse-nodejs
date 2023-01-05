@@ -1,4 +1,4 @@
-const { options } = require("./optionsMariaDB");
+const { options } = require("../options/config.js");
 const knex = require("knex")(options);
 
 knex.schema
@@ -16,3 +16,5 @@ knex.schema
   .finally(() => {
     knex.destroy();
   });
+
+  
