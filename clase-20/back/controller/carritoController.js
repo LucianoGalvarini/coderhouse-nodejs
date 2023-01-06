@@ -32,9 +32,11 @@ class carritoController {
         .catch((error) => res.json(error));
     });
 
-    // Agregar productos al carro
+    // Agregar productos al carrito
     this.carritoRouter.post("/carrito/:id/productos", (req, res) => {
       
+      // restar de stock
+
       this.carritoDaoFireBase
         .addProduct(req.params.id, req.body)
         .then((result) => res.json(result))
