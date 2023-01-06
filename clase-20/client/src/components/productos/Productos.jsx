@@ -24,7 +24,7 @@ const Productos = () => {
 
   async function handleSubmit() {
     await axios
-      .get(`http://localhost:8080/api/carrito/${cookies.get("cart")}/productos`)
+      .get(`http://localhost:8080/api/carrito/${cookies.get("cart")}`)
       .then((response) => {
         if (response.status === 200) {
           setCart(response.data);
@@ -61,7 +61,7 @@ const Productos = () => {
               {admin > 0 && (
                 <div className="btnFormulario-admin">
                   <Actualizar producto={product} />
-                  <Eliminar idProduct={product.id} />
+                  <Eliminar idProduct={product._id} />
                 </div>
               )}
               <AgregarACarrito data={product} />

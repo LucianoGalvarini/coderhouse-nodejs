@@ -23,7 +23,7 @@ const Actualizar = (producto) => {
     ) {
       await axios
         .put(
-          "http://localhost:8080/api/productos/" + producto.producto.id,
+          "http://localhost:8080/api/productos/" + producto.producto._id,
           product
         )
         .then((response) => {

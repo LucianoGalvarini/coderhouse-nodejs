@@ -20,7 +20,7 @@ const ModalCart = (data, onHide) => {
             <Container>
               <Row className="modalProdList">
                 {carrito.products.map((product) => (
-                  <Col key={product.id} className="producto">
+                  <Col key={product._id} className="producto">
                     <div className="imagen">
                       <img src={product.thumbnail} />
                     </div>
@@ -37,7 +37,7 @@ const ModalCart = (data, onHide) => {
                       <h5 className="stock bordes">Stock: {product.stock}</h5>
                     </div>
                     <div className="">
-                      <DelProdCart idProduct={product.id} />
+                      <DelProdCart idProduct={product._id} />
                     </div>
                   </Col>
                 ))}
